@@ -1,0 +1,106 @@
+@use "sass:math";
+
+// インナー幅設定
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 980px;
+// ※キュンパス幅ではなくインナーの幅を指す
+
+// 余白
+$padding-pc: 30px;
+$padding-sp: 16px;
+
+:root {
+  --inner: 1100px;
+  --padding-inline: 35px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --padding-inline: 16px;
+  }
+}
+
+////////////////////
+// フォント設定
+////////////////////
+
+:root {
+  --font-family-base: "Noto Sans JP", sans-serif;
+}
+// ※検証ツールでしっかり反映されているか確認する
+
+
+// フォントウェイト
+:root {
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+////////////////////
+// 色の指定
+////////////////////
+
+//色指定（共通性のあるものは出来る限り指定すると良い）
+:root {
+  --black: #000;
+  --white: #fff;
+  --text-black: #1C1C1C;
+  --text-brown: #514433;
+  --main-pink01: #E1398E;
+  --main-pink02: #F6339A;
+  --main-pink03: #E60076;
+  --bg-pink01: #FFF8FC;
+  --bg-pink02: #FFDBED;
+  --main-red: #FE3101;
+}
+
+////////////////////
+// z-index
+///////////////////
+
+:root {
+  --z-index-to-top: 200;
+  --z-index-drawer: 1000;
+  --z-index-header: 2000;
+  --z-index-hamburger: 10000;
+}
+
+////////////////////
+// レスポンシブ
+///////////////////
+:root {
+  --cq-ref-mobile: 375;
+  --cq-ref: 1366;
+  --fluid-basis-mobile: (100vw - 320px) / (375 - 320);
+  --fluid-basis: (100vw - 768px) / (1366 - 768);
+  --fluid-basis-2: (100vw - 1366px) / (1800 - 1366);
+}
+
+
+////////////////////
+// アニメーション設定
+///////////////////
+
+:root {
+  --duration-ui: 0.25s;
+  --duration-hover: 0.3s;
+  --duration-text: 0.4s;
+  --duration-emphasis: 0.7s;
+  --duration-scroll: 1s;
+
+  --ease-smooth-bounce: cubic-bezier(.48, .07, .33, .79);
+}
+
+////////////////////
+// bodyの指定
+////////////////////
+
+body {
+  color: var(--text-black);
+  font-family: var(--font-family-base);
+}

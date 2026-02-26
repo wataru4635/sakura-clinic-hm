@@ -1,0 +1,341 @@
+@use "../global" as *;
+
+.clinic-hours {
+padding-block: rem(24) rem(33);
+background-color: var(--bg-pink01);
+position: relative;
+@include mq('md') {
+padding-block: rem(50) rem(24);
+}
+}
+
+.clinic-hours__bg-top {
+  position: absolute;
+  top: rem(-60);
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.clinic-hours__bg-bottom {
+  position: absolute;
+  bottom: rem(-60);
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  z-index: -1;
+}
+.clinic-hours__bg-top,
+.clinic-hours__bg-bottom { 
+  @media (max-width: 767px) {
+  display: none;
+  }
+}
+.clinic-hours__bg-img {
+  width: 100%;
+  height: auto;
+}
+
+.clinic-hours__inner {
+  margin-inline: auto;
+  max-width: 500px;
+  padding-inline: var(--padding-inline);
+  @include mq("md") {
+    max-width: calc(rem(904) + var(--padding-inline) * 2);
+  }
+}
+
+.clinic-hours__table-wrap {
+  margin-top: rem(21);
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow-x: auto;
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
+.clinic-hours__table {
+  width: 100%;
+  border-collapse: collapse;
+  @include mq("md") {
+    min-width: 0;
+  }
+}
+
+.clinic-hours__head-row {
+  background: #fce7f3;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.clinic-hours__th {
+  padding: rem(13) rem(5);
+  font-size: rem(14);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.43;
+  color: var(--text-brown);
+  text-align: center;
+  @include mq("md") {
+    padding: rem(14) rem(8);
+    font-size: rem(16);
+    height: rem(57);
+
+  }
+}
+
+.clinic-hours__th:not(:first-child),
+.clinic-hours__cell {
+  border-left: 1px solid #e5e7eb;
+}
+
+.clinic-hours__th--label {
+  width: rem(76);
+  @include mq("md") {
+    width: rem(175);
+  }
+}
+
+.clinic-hours__th:not(.clinic-hours__th--label) {
+  width: rem(38);
+  @include mq("md") {
+    width: rem(104);
+  }
+}
+
+.clinic-hours__body-row {
+  &:first-child .clinic-hours__label {
+    border-radius: 0;
+  }
+}
+
+.clinic-hours__body-row--alt {
+  @include mq("md") {
+    background: rgba(249, 250, 251, 0.5);
+  }
+}
+
+.clinic-hours__label,
+.clinic-hours__cell {
+  padding: rem(10) rem(2);
+  font-size: rem(14);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.43;
+  color: var(--text-brown);
+  text-align: center;
+  @include mq("md") {
+    padding: rem(16) rem(8);
+    font-size: rem(16);
+    height: rem(57);
+  }
+}
+
+.clinic-hours__label {
+  width: rem(76);
+  background: #fef8fb;
+  text-align: center;
+  @include mq("md") {
+    width: rem(175);
+    text-align: left;
+    padding-left: rem(72);
+  }
+}
+
+.clinic-hours__body-row--alt .clinic-hours__label {
+  @include mq("md") {
+    background: rgba(253, 242, 248, 0.5);
+  }
+}
+
+.clinic-hours__cell {
+  width: rem(36);
+  @include mq("md") {
+    width: rem(104);
+  }
+}
+
+.clinic-hours__dot {
+  display: inline-block;
+  width: rem(12);
+  aspect-ratio: 1 / 1;
+  background: var(--main-pink03);
+  border-radius: calc(infinity * 1px);
+  @include mq("md") {
+    width: rem(19);
+  }
+}
+
+.clinic-hours__cell--closed .clinic-hours__dot {
+  display: none;
+}
+
+.clinic-hours__sankaku {
+  display: block;
+  width: rem(15);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  @include mq("md") {
+    width: rem(19);
+  }
+}
+
+.clinic-hours__batu {
+  display: block;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  width: rem(13);
+  @include mq("md") {
+    width: rem(17);
+  }
+}
+
+.clinic-hours__body-row:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.clinic-hours__body-row:last-child .clinic-hours__label {
+  border-radius: 0 0 0 14px;
+}
+
+.clinic-hours__body-row:last-child .clinic-hours__cell:last-child {
+  border-radius: 0 0 14px 0;
+}
+
+@include mq("md") {
+  .clinic-hours__body-row:last-child .clinic-hours__label,
+  .clinic-hours__body-row:last-child .clinic-hours__cell:last-child {
+    border-radius: 0;
+  }
+}
+
+.clinic-hours__note {
+  margin-top: rem(9);
+  padding-inline: rem(8);
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  @include mq("md") {
+    margin-top: rem(21);
+    padding-inline: 0;
+  }
+}
+
+.clinic-hours__note-item {
+  font-size: rem(14);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.43;
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+}
+
+.clinic-hours__guide {
+  margin-top: rem(32);
+  @include mq("md") {
+    margin-top: rem(62);
+  }
+}
+
+.clinic-hours__guide-content {
+  margin-inline: auto;
+  @media (max-width: 767px) {
+  padding-inline: rem(8);
+  }
+  @include mq('md') {
+    max-width: rem(680);
+  }
+}
+
+.clinic-hours__guide-text {
+  font-size: rem(18);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.67;
+  color: var(--text-brown);
+  margin-top: rem(24);
+  @include mq("md") {
+    font-size: rem(20);
+    line-height: 1.5;
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: rem(38);
+  }
+}
+
+.clinic-hours__guide-text-highlight {
+  color: var(--main-pink03);
+  display: inline;
+}
+
+.clinic-hours__therapy-box {
+  margin-top: rem(22);
+  background: #eee8da;
+  border-radius: 4px;
+  @media (max-width: 767px) {
+  width: 90%;
+  max-width: rem(290);
+  margin-inline: auto;
+  }
+  @include mq("md") {
+    margin-top: rem(38);
+    display: flex;
+  }
+}
+
+.clinic-hours__therapy-head {
+  background: #e4d9bf;
+  padding: rem(21) rem(16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(66);
+  @include mq("md") {
+    width: rem(293);
+    padding: rem(21) rem(5) rem(21) rem(18);
+  }
+}
+
+.clinic-hours__therapy-title {
+  font-size: rem(18);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.33;
+  letter-spacing: 0.05em;
+  color: var(--text-brown);
+  @include mq("md") {
+    font-size: rem(20);
+    line-height: 1.2;
+  }
+}
+
+.clinic-hours__therapy-list {
+  padding: rem(16) rem(17.5) rem(16) rem(17.5);
+  font-size: rem(15);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.6;
+  color: var(--text-brown);
+  @include mq("md") {
+    flex: 1;
+    padding: rem(8) rem(10) rem(8) rem(42);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.clinic-hours__guide-note {
+  margin-top: rem(18);
+  font-size: rem(14);
+  font-weight: var(--font-weight-regular);
+  line-height: 2.14;
+  color: #101828;
+  @include mq("md") {
+    margin-top: rem(17);
+    font-size: rem(16);
+    line-height: 1.875;
+    color: var(--text-black);
+  }
+}
+

@@ -1,0 +1,124 @@
+@use "../global" as *;
+
+.top-contact {
+padding-block: rem(26) rem(40);
+@include mq('md') {
+padding-block: rem(46) rem(60);
+}
+}
+
+.top-contact__inner {
+margin-inline: auto;
+max-width: 500px;
+padding-inline: var(--padding-inline);
+@include mq('md') {
+max-width: calc(rem(980) + var(--padding-inline) * 2);
+}
+}
+
+.top-contact__heading .section-heading__title {
+  @include mq("md") {
+    font-size: rem(36);
+  }
+}
+
+.top-contact__tel-block {
+  margin-top: rem(24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(12);
+  @include mq("md") {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: rem(47);
+    gap: rem(38);
+  }
+}
+
+.top-contact__tel-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(12);
+  text-decoration: none;
+  color: var(--main-pink03);
+  @include mq("md") {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
+  }
+}
+
+.top-contact__tel-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  @include mq("md") {
+    gap: rem(5);
+  }
+}
+
+.top-contact__tel-icon {
+  display: block;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  width: rem(28);
+
+  img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.top-contact__tel-number {
+  font-weight: var(--font-weight-medium);
+  font-size: rem(24);
+  line-height: 1.33;
+  letter-spacing: calc(0.5px / 24 * 1em);
+  @include mq("md") {
+    font-size: rem(30);
+    line-height: 1.2;
+  }
+}
+
+.top-contact__tel-call-note {
+  font-weight: var(--font-weight-regular);
+  font-size: rem(14);
+  line-height: 1.43;
+  text-align: center;
+  color: var(--main-pink03);
+  @include mq("md") {
+    font-size: rem(20);
+    line-height: 1.4;
+  }
+}
+
+.top-contact__tel-note {
+  margin: 0;
+  font-weight: var(--font-weight-regular);
+  font-size: rem(14);
+  line-height: 1.43;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+  &--brown {
+    color: var(--text-brown);
+    @include mq("md") {
+      color: var(--text-black);
+    }
+  }
+}
+
+@include mq("md") {
+  .top-contact__tel-note--brown {
+    flex-basis: 100%;
+    order: 3;
+  }
+}

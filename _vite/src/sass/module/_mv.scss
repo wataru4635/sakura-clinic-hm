@@ -1,0 +1,95 @@
+@use "../global" as *;
+
+.mv {
+position: relative;
+height: auto;
+@include mq('md') {
+  height: 100vh;
+  max-height: rem(950);
+}
+}
+
+.mv__img {
+height: 100%;
+object-fit: cover;
+}
+
+.mv__copy {
+position: absolute;
+top: 56%;
+left: 50%;
+translate: -50% -50%;
+width: 100%;
+@include mq('md') {
+top: 47%;
+}
+}
+
+.mv__copy-content {
+position: relative;
+border-radius: 3.95px;
+background-color: rgba(255, 255, 255, 0.90);
+padding: rem(7) rem(10);
+margin-inline: auto;
+width: fit-content;
+@include mq('md') {
+  border-radius: 8px;
+padding: rem(7.5) rem(37);
+}
+
+&::before {
+  content: "";
+  position: absolute;
+  top: rem(-10);
+  left: rem(-15);
+  width: rem(37);
+  aspect-ratio: 61 / 54;
+  background-color: #FCE7F3;
+  -webkit-mask-image: url('../images/common/sakura01.svg');
+  mask-image: url('../images/common/sakura01.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  @include mq('md') {
+    top: rem(-20);
+    left: rem(-30);
+    width: rem(61);
+  }
+}
+&::after {
+  content: "";
+  position: absolute;
+  bottom: rem(-10);
+  right: rem(-15);
+  width: rem(37);
+  aspect-ratio: 61 / 54;
+  background-color: #FCE7F3;
+  -webkit-mask-image: url('../images/common/sakura02.svg');
+  mask-image: url('../images/common/sakura02.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  @include mq('md') {
+    bottom: rem(-15);
+    right: rem(-24);
+    width: rem(61);
+  }
+}
+}
+
+.mv__copy-title {
+  text-align: center;
+  color: var(--text-brown);
+  font-size: rem(17);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.38914;
+  @include mq('md') {
+    font-size: clamp(20px, calc((#{"32 * 100"} / var(--cq-ref) * 1cqw)), 32px);
+  }
+}
+.mv__copy-highlight {
+color: var(--main-pink01);
+}
+

@@ -1,0 +1,104 @@
+@use "../global" as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: myClamp(8, 13, 350, 390);
+  row-gap: rem(15);
+  flex-wrap: wrap;
+
+  @include mq('md') {
+    gap: rem(15);
+  }
+}
+
+.pagination .page-link {
+  background-color: var(--white);
+}
+
+.pagination .page-link,
+.pagination .current-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(36);
+  aspect-ratio: 1 / 1;
+  border-radius: calc(infinity * 1px);
+  font-weight: var(--font-weight-bold);
+  font-size: rem(16);
+  line-height: 1;
+  padding-bottom: rem(2);
+  transition: background-color var(--duration-hover) ease, color var(--duration-hover) ease;
+@include mq('md') {
+  font-size: rem(19);
+  width: rem(43);
+}
+@media (any-hover: hover) {
+&:hover {
+  background-color: var(--main-pink03);
+  color: var(--white);
+}
+}
+}
+
+.pagination .current-page {
+  background-color: var(--main-pink03);
+  color: var(--white);
+}
+
+.pagination .dots {
+  font-size: rem(18);
+}
+
+.pagination .prev {
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--main-pink03);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--main-pink03);
+    }
+  }
+}
+
+.pagination .next {
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--main-pink03);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--main-pink03);
+    }
+  }
+}
+
+.pagination .prev,
+.pagination .next {
+  background-color: #514433;
+  -webkit-mask-image: url('../images/common/pagination-arrow.svg');
+  mask-image: url('../images/common/pagination-arrow.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  width: rem(42);
+  aspect-ratio: 50 / 11;
+  line-height: 1;
+  transition: background-color var(--duration-hover) ease;
+position: relative;
+transform: translateY(rem(-2));
+  @include mq('md') {
+    width: rem(50);
+  }
+}
+
+.pagination .prev {
+  scale: -1 1;
+}

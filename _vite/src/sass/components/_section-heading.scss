@@ -1,0 +1,31 @@
+@use "../global" as *;
+
+.section-heading {
+display: flex;
+flex-direction: column-reverse;
+align-items: center;
+@include mq('md') {
+flex-direction: row;
+justify-content: center;
+gap: rem(14);
+}
+}
+
+.section-heading__title {
+    color: var(--text-brown);
+  text-align: center;
+  font-size: rem(24);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.33333;
+  letter-spacing: calc(0.5 / 24 * 1em);
+  @include mq('md') {
+  font-size: rem(30);
+  }
+}
+
+.section-heading__icon {
+object-fit: contain;
+height: auto;
+width: rem(27);
+}
+

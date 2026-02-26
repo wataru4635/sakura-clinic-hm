@@ -1,0 +1,198 @@
+@use "../global" as *;
+/* ===============================================
+# フェードアニメーション：IntersectionObserver＆GSAP用
+=============================================== */
+
+/* フェード */
+.js-fade-in {
+  opacity: 0;
+  transition: opacity var(--duration-scroll) ease-in-out;
+  
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+/* 上方向にスライド */
+.js-fade-up {
+  opacity: 0;
+  translate: 0 10px;
+  transition: opacity var(--duration-scroll) ease-in-out, translate var(--duration-scroll) ease-in-out;
+  
+  &.is-active {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* お知らせ一覧 */
+
+.top-news__list.is-active {
+  & .news-list__item {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.top-news__list .news-list__item {
+  opacity: 0;
+  translate: 15px 0;
+  transition: opacity var(--duration-scroll) ease-in-out, translate var(--duration-scroll) ease-in-out;
+  &:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  &:nth-child(4) {
+    transition-delay: 0.6s;
+  }
+  &:nth-child(5) {
+    transition-delay: 0.8s;
+  }
+}
+
+/* 背景円 */
+.js-circle {
+  opacity: 0;
+scale: 0.8;
+filter: blur(10px);
+transition: opacity 2s cubic-bezier(.74,1.04,.99,.97), scale 1.5s cubic-bezier(.74,1.04,.99,.97), filter 1.5s cubic-bezier(.74,1.04,.99,.97);
+}
+.js-circle.is-active {
+  opacity: 1;
+  scale: 1;
+  filter: blur(0);
+}
+
+/* セクションタイトル */
+.js-section-heading {
+  & .section-heading__title {
+    opacity: 0;
+    translate: 5px 0;
+    transition: opacity var(--duration-scroll) ease-in-out, translate var(--duration-scroll) ease-in-out;
+  }
+  &.is-active .section-heading__title{
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  & .section-heading__icon {
+    opacity: 0;
+    transform: rotate(-45deg);
+    transition: transform var(--duration-scroll) ease-in-out, opacity var(--duration-scroll) ease-in-out;
+    transition-delay: 0.1s;
+    transform-origin: center center;
+    will-change: transform, opacity;
+    @include mq('md') {
+      transition-delay: 0.3s;
+    }
+  }
+  &.is-active .section-heading__icon {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+/* 施設紹介 */
+.js-facility-item {
+  &::before {
+    opacity: 0;
+    scale: 0.9;
+    transition: opacity 1.2s ease, scale 1.2s ease;
+    transition-delay: .4s;
+    filter: blur(10px);
+    will-change: opacity, scale, filter;
+  }
+  & .facility__item-head {
+    & .facility__item-head-text {
+      opacity: 0;
+      translate: 5px 0;
+      transition: opacity var(--duration-emphasis) ease-in-out, translate var(--duration-emphasis) ease-in-out;
+      transition-delay: .2s;
+      @include mq('md') {
+        transition: opacity var(--duration-scroll) ease-in-out, translate var(--duration-scroll) ease-in-out;
+      }
+    }
+    &::before {
+      height: 0;
+      transition: height var(--duration-emphasis) ease-in-out;
+      will-change: height;
+      @include mq('md') {
+        transition: height var(--duration-scroll) ease-in-out;
+      }
+    }
+  }
+  & .facility__item-img {
+    scale: 1.1;
+    transition: scale var(--duration-scroll) ease-in-out, opacity var(--duration-scroll) ease-in-out;
+    opacity: 0;
+    transition-delay: .5s;
+    @include mq('md') {
+      transition: scale 1.3s ease-in-out, opacity 1.3s ease-in-out;
+    }
+  }
+}
+
+.js-facility-item.is-active {
+  &::before {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+  & .facility__item-head {
+    & .facility__item-head-text {
+      opacity: 1;
+      translate: 0 0;
+    }
+    &::before {
+      height: 100%;
+      top: 0;
+    }
+  }
+  & .facility__item-img {
+    scale: 1;
+    opacity: 1;
+  }
+}
+////////////////////
+// 遅延時間の指定
+////////////////////
+
+:root {
+  --delay-1: 0.1s;
+  --delay-2: 0.2s;
+  --delay-3: 0.3s;
+  --delay-4: 0.4s;
+  --delay-5: 0.5s;
+}
+
+.--delay-1 {
+  transition-delay: var(--delay-1);
+}
+
+.--delay-2 {
+  transition-delay: var(--delay-2);
+}
+
+.--delay-3 {
+  transition-delay: var(--delay-3);
+}
+
+.--delay-4 {
+  transition-delay: var(--delay-4);
+}
+
+.--delay-5 {
+  transition-delay: var(--delay-5);
+}
+
+@media (max-width: 768px) {
+
+  .--delay-1,
+  .--delay-2,
+  .--delay-3,
+  .--delay-4 {
+    transition-delay: .0s;
+  }
+}

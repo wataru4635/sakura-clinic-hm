@@ -1,0 +1,30 @@
+@use "../global" as *;
+
+.to-top {
+  position: fixed;
+  right: rem(20);
+  bottom: rem(20);
+  width: rem(43);
+  cursor: pointer;
+  z-index: var(--z-index-to-top);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &.js-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include mq('md') {
+    width: rem(55);
+    right: rem(51);
+    bottom: rem(51);
+  }
+}
+
+.to-top__img {
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+}

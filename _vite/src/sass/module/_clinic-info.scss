@@ -1,0 +1,104 @@
+@use "../global" as *;
+
+.clinic-info {
+padding-block: rem(58) rem(40);
+@include mq('md') {
+padding-block: rem(60) rem(129);
+overflow: clip;
+}
+}
+
+.clinic-info__inner {
+  margin-inline: auto;
+  max-width: 500px;
+  padding-inline: var(--padding-inline);
+  @include mq("md") {
+    max-width: calc(rem(902) + var(--padding-inline) * 2);
+    position: relative;
+  }
+}
+
+.clinic-info__table-wrap {
+  margin-top: rem(24);
+  background: var(--white);
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
+.clinic-info__table {
+  width: 100%;
+  border-collapse: collapse;
+  @include mq("md") {
+    table-layout: fixed;
+  }
+}
+
+.clinic-info__row {
+  display: block;
+  border-bottom: 1px solid #e5e7eb;
+  &:last-child {
+    border-bottom: none;
+  }
+  @include mq("md") {
+    display: table-row;
+  }
+}
+
+.clinic-info__th,
+.clinic-info__td {
+  display: block;
+  padding: rem(12) rem(16);
+  font-size: rem(16);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color: var(--text-black);
+  text-align: left;
+  @include mq("md") {
+    display: table-cell;
+    padding: rem(16) rem(24);
+    min-height: rem(57);
+  }
+}
+
+.clinic-info__th {
+  background: #fdf2f8;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-brown);
+  @media (max-width: 767px) {
+  border-bottom: 1px solid #e5e7eb;
+  }
+  @include mq("md") {
+    width: rem(256);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.clinic-info__tel {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(3);
+  color: var(--main-pink03);
+  font-weight: var(--font-weight-medium);
+}
+
+.clinic-info__tel-icon {
+  flex-shrink: 0;
+  color: var(--main-pink01);
+  line-height: 0;
+  width: rem(23);
+  @include mq('md') {
+    width: rem(20);
+  }
+}
+
+.clinic-info__tel-icon img {
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+

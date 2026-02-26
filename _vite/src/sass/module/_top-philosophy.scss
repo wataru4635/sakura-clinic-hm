@@ -1,0 +1,108 @@
+@use "../global" as *;
+
+.top-philosophy {
+  padding-block: rem(20) rem(70);
+  @include mq("md") {
+    padding-block: rem(51) rem(134);
+  }
+}
+
+.top-philosophy__inner {
+  margin-inline: auto;
+  max-width: 500px;
+  padding-inline: var(--padding-inline);
+  @media (max-width: 767px) {
+  --padding-inline: 21px;
+  }
+  @include mq("md") {
+    max-width: calc(rem(820) + var(--padding-inline) * 2);
+  }
+}
+
+.top-philosophy__block {
+  &:not(:first-child) {
+    margin-top: rem(30);
+    @include mq("md") {
+      margin-top: rem(70);
+    }
+  }
+}
+
+.top-philosophy__heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: rem(11);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+  font-size: rem(20);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  color: var(--main-pink01);
+  @include mq("md") {
+    font-size: rem(30);
+  }
+}
+
+.top-philosophy__bar {
+  display: block;
+  width: 5px;
+  height: rem(34);
+  background: var(--main-pink01);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.top-philosophy__lead {
+  margin: rem(20) 0 0;
+  font-weight: var(--font-weight-medium);
+  font-size: rem(16);
+  line-height: 2.19;
+  text-align: center;
+  color: var(--text-brown);
+  @include mq("md") {
+    margin-top: rem(40);
+    font-size: rem(18);
+    line-height: 1.94;
+  }
+}
+
+.top-philosophy__list {
+  margin-top: rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: rem(29);
+padding-inline: rem(3);
+  @include mq("md") {
+    margin-top: rem(37);
+    padding-inline: rem(8);
+  }
+}
+
+.top-philosophy__item {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+}
+
+.top-philosophy__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: rem(6) rem(12);
+  min-height: rem(31);
+  font-weight: var(--font-weight-medium);
+  font-size: rem(15);
+  line-height: 1.2;
+  color: var(--text-brown);
+  background: #eee8da;
+  border-radius: 4px;
+}
+
+.top-philosophy__text {
+  margin: 0;
+  font-size: rem(16);
+  line-height: 1.875;
+  color: var(--text-black);
+}

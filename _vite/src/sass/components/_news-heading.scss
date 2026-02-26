@@ -1,0 +1,31 @@
+@use "../global" as *;
+
+.news-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(8);
+  }
+  
+  .news-heading__title {
+    color: var(--main-pink02);
+    font-size: rem(24);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.333;
+    letter-spacing: calc(0.5 / 24 * 1em);
+    @include mq('md') {
+    font-size: rem(30);
+    line-height: 1.2;
+    }
+  }
+  
+  .news-heading__subtitle {
+    color: var(--main-pink02);
+    font-size: rem(14);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.428;
+    letter-spacing: calc(0.55 / 14 * 1em);
+    @include mq('md') {
+    letter-spacing: calc(0.7 / 14 * 1em);
+    }
+  }
