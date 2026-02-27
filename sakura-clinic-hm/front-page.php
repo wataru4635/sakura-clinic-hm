@@ -233,7 +233,7 @@
         </div>
         <div class="js-fade-in">
           <div class="access__map-wrap">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.4611473488158!2d137.71093292755575!3d34.718768797997605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601adee59eca050b%3A0xd6598f855f717bcc!2z44CSNDMyLTgwMTIg6Z2Z5bKh55yM5rWc5p2-5biC5Lit5aSu5Yy65biD5qmL77yT5LiB55uu77yR77yU4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1771978336221!5m2!1sja!2sjp" width="921" height="464" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="さくらクリニックの地図"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6558.949447021838!2d137.7087081149158!3d34.718426489680226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601adee59eb5b259%3A0xb90a253693beb922!2z44GV44GP44KJ44Kv44Oq44OL44OD44Kv!5e0!3m2!1sja!2sjp!4v1772166957303!5m2!1sja!2sjp" width="921" height="464" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="さくらクリニックの地図"></iframe>
           </div>
           <div class="access__info">
             <p class="access__info-item">●〒432-8012 静岡県浜松市中央区布橋3丁目14-17</p>
