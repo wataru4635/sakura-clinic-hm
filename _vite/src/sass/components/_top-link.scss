@@ -6,13 +6,15 @@
   font-size: rem(16);
   font-weight: var(--font-weight-medium);
   letter-spacing: calc(0.5 / 16 * 1em);
-  padding: rem(11.5) rem(55) rem(12.5) rem(55);
+  padding: rem(11.5) rem(50) rem(12.5) rem(50);
+  min-width: rem(196);
   border-radius: 10px;
   border: 2px solid var(--main-pink02);
   transition: background-color var(--duration-hover) ease, color var(--duration-hover) ease;
   @include mq('md') {
     letter-spacing: calc(0.8 / 16 * 1em);
-    padding: rem(17.5) rem(58.484) rem(16.5) rem(58);
+    padding: rem(17.5) rem(50) rem(16.5) rem(50);
+    min-width: rem(201);
   }
   @media (any-hover: hover) {
     &:hover {

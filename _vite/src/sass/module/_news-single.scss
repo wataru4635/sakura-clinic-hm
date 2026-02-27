@@ -158,9 +158,13 @@ margin-top: rem(62);
   }
 }
 
-.news-single__btn {
+.news-single__btn-wrap {
   margin-top: rem(57);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: rem(46);
+  align-items: center;
   @include mq('md') {
     margin-top: rem(89);
   }

@@ -831,7 +831,11 @@ button{
   margin-top:3.1875rem;
 }
 
-.news-single__btn{
+.news-single__btn-wrap{
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+  gap:2.875rem;
   margin-top:3.5625rem;
   text-align:center;
 }
@@ -966,31 +970,6 @@ button{
 .top-news__btn{
   margin-top:1.5rem;
   text-align:center;
-}
-
-.top-news__btn-link{
-  align-items:center;
-  border:2px solid var(--main-pink02);
-  border-radius:10px;
-  color:var(--main-pink02);
-  display:inline-flex;
-  font-size:1rem;
-  font-weight:var(--font-weight-regular);
-  gap:0.625rem;
-  letter-spacing:0.03125em;
-  padding:0.71875rem 2.0625rem 0.78125rem 2.125rem;
-  transition:background-color var(--duration-hover) ease, color var(--duration-hover) ease;
-}
-.top-news__btn-link::after{
-  aspect-ratio:1/1;
-  border-right:3px solid var(--main-pink02);
-  border-top:3px solid var(--main-pink02);
-  content:"";
-  display:inline-block;
-  margin-top:0.125rem;
-  rotate:45deg;
-  transition:border-color var(--duration-hover) ease;
-  width:0.875rem;
 }
 
 .top-philosophy{
@@ -1519,6 +1498,33 @@ button{
   overflow:hidden;
 }
 
+.link-btn{
+  align-items:center;
+  border:2px solid var(--main-pink02);
+  border-radius:10px;
+  color:var(--main-pink02);
+  display:inline-flex;
+  font-size:1rem;
+  font-weight:var(--font-weight-medium);
+  gap:0.625rem;
+  justify-content:center;
+  letter-spacing:0.03125em;
+  min-width:12.25rem;
+  padding:0.71875rem 2.0625rem 0.78125rem 2.125rem;
+  transition:background-color var(--duration-hover) ease, color var(--duration-hover) ease;
+}
+.link-btn::after{
+  aspect-ratio:1/1;
+  border-right:3px solid var(--main-pink02);
+  border-top:3px solid var(--main-pink02);
+  content:"";
+  display:inline-block;
+  margin-top:0.125rem;
+  rotate:45deg;
+  transition:border-color var(--duration-hover) ease;
+  width:0.875rem;
+}
+
 .news-heading{
   align-items:center;
   display:flex;
@@ -1738,7 +1744,8 @@ button{
   font-size:1rem;
   font-weight:var(--font-weight-medium);
   letter-spacing:0.03125em;
-  padding:0.71875rem 3.4375rem 0.78125rem 3.4375rem;
+  min-width:12.25rem;
+  padding:0.71875rem 3.125rem 0.78125rem 3.125rem;
   transition:background-color var(--duration-hover) ease, color var(--duration-hover) ease;
 }
 
@@ -2013,7 +2020,7 @@ button{
   .news-single__post-navigation{
     margin-top:5.75rem;
   }
-  .news-single__btn{
+  .news-single__btn-wrap{
     margin-top:5.5625rem;
   }
   .not-found{
@@ -2093,14 +2100,6 @@ button{
   }
   .top-news__btn{
     margin-top:3rem;
-  }
-  .top-news__btn-link{
-    gap:1.25rem;
-    letter-spacing:0.05em;
-    padding:1rem 1.53125rem 1rem 2.125rem;
-  }
-  .top-news__btn-link::after{
-    width:0.9375rem;
   }
   .top-philosophy{
     padding-block:3.1875rem 8.375rem;
@@ -2207,6 +2206,18 @@ button{
   .header__hamburger-button{
     display:none;
   }
+  .link-btn{
+    gap:1.25rem;
+    letter-spacing:0.05em;
+    min-width:12.5625rem;
+    padding:1.0625rem 1.5rem 1.0625rem 2.125rem;
+  }
+  .link-btn::after{
+    width:0.9375rem;
+  }
+  .link-btn.link-btn--archive{
+    gap:1.1875rem;
+  }
   .news-heading__title{
     font-size:1.875rem;
     line-height:1.2;
@@ -2262,7 +2273,8 @@ button{
   }
   .top-link{
     letter-spacing:0.05em;
-    padding:1.09375rem 3.65525rem 1.03125rem 3.625rem;
+    min-width:12.5625rem;
+    padding:1.09375rem 3.125rem 1.03125rem 3.125rem;
   }
 }
 
@@ -2353,6 +2365,9 @@ button{
   .header__nav-list{
     display:none;
   }
+  .link-btn.link-btn--archive{
+    padding:0.71875rem 2rem 0.78125rem 2.6875rem;
+  }
 }
 
 @media (max-width: 375px){
@@ -2365,14 +2380,6 @@ button{
   a:hover{
     cursor:pointer;
   }
-  .top-news__btn-link:hover{
-    background-color:var(--main-pink02);
-    color:var(--white);
-  }
-  .top-news__btn-link:hover::after{
-    border-right:3px solid var(--white);
-    border-top:3px solid var(--white);
-  }
   .footer__logo-link:hover{
     opacity:0.8;
   }
@@ -2381,6 +2388,14 @@ button{
   }
   .header__nav-link:hover{
     color:var(--main-pink01);
+  }
+  .link-btn:hover{
+    background-color:var(--main-pink02);
+    color:var(--white);
+  }
+  .link-btn:hover::after{
+    border-right:3px solid var(--white);
+    border-top:3px solid var(--white);
   }
   .news-list__link:hover .news-list__date, .news-list__link:hover .news-list__item-title{
     color:var(--main-pink02);

@@ -23,7 +23,10 @@
       <div class="news-single__post-navigation post-navigation">
         <?php get_template_part('parts/post-navigation'); ?>
       </div>
-      <div class="news-single__btn">
+      <div class="news-single__btn-wrap">
+      <a href="<?php echo NEWS_URL; ?>" class="link-btn link-btn--archive">
+          一覧へ戻る
+        </a>
         <a href="<?php echo HOME_URL; ?>" class="top-link">
           TOPへ戻る
         </a>

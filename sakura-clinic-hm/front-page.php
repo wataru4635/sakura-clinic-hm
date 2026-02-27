@@ -52,7 +52,7 @@
       <p class="top-news__empty">現在投稿はありません</p>
       <?php endif; ?>
       <div class="top-news__btn js-fade-up">
-        <a href="<?php echo NEWS_URL; ?>" class="top-news__btn-link">
+        <a href="<?php echo NEWS_URL; ?>" class="link-btn">
           お知らせ一覧
         </a>
       </div>

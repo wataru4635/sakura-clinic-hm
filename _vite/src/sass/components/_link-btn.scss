@@ -1,0 +1,61 @@
+@use "../global"as *;
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+  color: var(--main-pink02);
+  font-size: rem(16);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: calc(0.5 / 16 * 1em);
+  padding: rem(11.5) rem(33) rem(12.5) rem(34);
+  min-width: rem(196);
+  border-radius: 10px;
+  border: 2px solid var(--main-pink02);
+  transition: background-color var(--duration-hover) ease, color var(--duration-hover) ease;
+
+  @include mq('md') {
+    letter-spacing: calc(0.8 / 16 * 1em);
+    padding: rem(17) rem(24) rem(17) rem(34);
+    gap: rem(20);
+    min-width: rem(201);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--main-pink02);
+      color: var(--white);
+
+      &::after {
+        border-top: 3px solid var(--white);
+        border-right: 3px solid var(--white);
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: rem(14);
+    aspect-ratio: 1 / 1;
+    border-top: 3px solid var(--main-pink02);
+    border-right: 3px solid var(--main-pink02);
+    rotate: 45deg;
+    margin-top: rem(2);
+    transition: border-color var(--duration-hover) ease;
+
+    @include mq('md') {
+      width: rem(15);
+    }
+  }
+}
+
+.link-btn.link-btn--archive {
+  @media (max-width: 767px) {
+    padding: rem(11.5) rem(32) rem(12.5) rem(43);
+  }
+  @include mq('md') {
+    gap: rem(19);
+  }
+}
