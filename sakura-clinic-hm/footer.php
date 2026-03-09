@@ -17,7 +17,7 @@
   </div>
   <div class="footer__inner">
     <a href="<?php echo HOME_URL; ?>" class="footer__logo-link">
-      <img src="<?php echo IMAGEPATH; ?>/common/logo-white.webp" alt="さくらクリニック" width="193" height="34" class="footer__logo-img" loading="lazy">
+      <img src="<?php echo IMAGEPATH; ?>/common/logo.webp" alt="さくらクリニック" width="193" height="34" class="footer__logo-img" loading="lazy">
     </a>
     <p class="footer__copyright">&copy; さくらクリニック all rights reserved.</p>
   </div>
