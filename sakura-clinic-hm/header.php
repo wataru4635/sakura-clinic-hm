@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
-<meta charset="<?php bloginfo('charset'); ?>">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZK1L34HST"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-EZK1L34HST');
+  </script>
+
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <!-- meta情報 -->
@@ -112,7 +126,8 @@
         echo esc_attr('【公式】さくらクリニック｜静岡県浜松市');
     }
   ?>" />
-  <meta property="og:type" content="<?php echo esc_attr((is_singular('post') || (is_singular() && !is_page())) ? 'article' : 'website'); ?>">
+  <meta property="og:type"
+    content="<?php echo esc_attr((is_singular('post') || (is_singular() && !is_page())) ? 'article' : 'website'); ?>">
   <meta property="og:url" content="<?php
     if (is_front_page()) {
         echo esc_url(home_url('/'));
@@ -129,7 +144,8 @@
         echo esc_url(home_url('/'));
     }
   ?>" />
-  <meta property="og:image" content="https://sakura-clinic-hm.com/wp-content/themes/sakura-clinic-hm/assets/images/og-img.jpg" />
+  <meta property="og:image"
+    content="https://sakura-clinic-hm.com/wp-content/themes/sakura-clinic-hm/assets/images/og-img.jpg" />
   <meta property="og:site_name" content="【公式】さくらクリニック｜静岡県浜松市" />
   <meta property="og:description" content="<?php
     $og_description = '浜松市のさくらクリニックは、内科・麻酔科・リハビリテーション科を診療科目にし、地域に根ざした医療を提供しています。休診情報や求人情報を随時掲載。';
@@ -158,21 +174,22 @@
 
 <body <?php body_class(); ?>>
 
-<header class="header">
+  <header class="header">
     <div class="header__inner">
-    <a href="<?php echo HOME_URL; ?>" class="header__logo-link">
+      <a href="<?php echo HOME_URL; ?>" class="header__logo-link">
         <?php
           $logo_tag = (is_front_page() || is_home()) ? 'h1' : 'div';
         ?>
         <<?php echo esc_attr($logo_tag); ?> class="header__logo">
-          <img src="<?php echo IMAGEPATH; ?>/common/logo.webp" alt="さくらクリニック" width="133"
-            height="44" class="header__logo-img" >
+          <img src="<?php echo IMAGEPATH; ?>/common/logo.webp" alt="さくらクリニック" width="133" height="44"
+            class="header__logo-img">
         </<?php echo esc_attr($logo_tag); ?>>
       </a>
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="<?php echo TOP_NEWS_URL; ?>" class="header__nav-link<?php if(is_post_type_archive('news') || is_singular('news')): ?> current<?php endif; ?>">お知らせ</a>
+            <a href="<?php echo TOP_NEWS_URL; ?>"
+              class="header__nav-link<?php if(is_post_type_archive('news') || is_singular('news')): ?> current<?php endif; ?>">お知らせ</a>
           </li>
           <li class="header__nav-item">
             <a href="<?php echo CLINIC_INFO_URL; ?>" class="header__nav-link">クリニック情報</a>
@@ -191,12 +208,12 @@
           </li>
         </ul>
       </nav>
-        <button class="header__hamburger-button js-hamburger" type="button" aria-label="メニューを開く">
+      <button class="header__hamburger-button js-hamburger" type="button" aria-label="メニューを開く">
         <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        </div>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
   <div class="drawer">
@@ -205,11 +222,11 @@
         <li class="drawer__item">
           <a href="<?php echo TOP_NEWS_URL; ?>"
             class="drawer__link<?php if(is_post_type_archive('news') || is_singular('news')): ?> current<?php endif; ?>">
-              <span class="drawer__link-text">お知らせ</span>
-              <span class="drawer__link-icon">
-                <img src="<?php echo IMAGEPATH; ?>/common/arrow_down.svg" alt="下矢印" width="23" height="23">
-              </span>
-            </a>
+            <span class="drawer__link-text">お知らせ</span>
+            <span class="drawer__link-icon">
+              <img src="<?php echo IMAGEPATH; ?>/common/arrow_down.svg" alt="下矢印" width="23" height="23">
+            </span>
+          </a>
         </li>
         <li class="drawer__item">
           <a href="<?php echo CLINIC_INFO_URL; ?>" class="drawer__link">
